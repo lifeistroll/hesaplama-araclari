@@ -1,0 +1,5 @@
+git add .
+
+git commit -m "..."   (açıklama)
+
+git push -u origin master  (gönderme)
