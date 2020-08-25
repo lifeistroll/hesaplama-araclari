@@ -1,6 +1,8 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from reelgetiri import Ui_ReelGetiri
 from repohesaplama import Ui_repogethesaplama
+from piyasadegerihesaplama import Ui_piyasadegerihesaplama
+from varlikdeg import Ui_varlikdeg
 
 class Ui_MainWindow(object):
 
@@ -12,6 +14,16 @@ class Ui_MainWindow(object):
     def openWindowRepoGetiri(self):
         self.window =  QtWidgets.QMainWindow()
         self.ui = Ui_repogethesaplama()
+        self.ui.setupUi(self.window)
+        self.window.show()
+    def openWindowPiyasaDegeri(self):
+        self.window =  QtWidgets.QMainWindow()
+        self.ui = Ui_piyasadegerihesaplama()
+        self.ui.setupUi(self.window)
+        self.window.show()
+    def openWindowVarlikDegeri(self):
+        self.window =  QtWidgets.QMainWindow()
+        self.ui = Ui_varlikdeg()
         self.ui.setupUi(self.window)
         self.window.show()
 
@@ -39,7 +51,7 @@ class Ui_MainWindow(object):
         self.label_repo = QtWidgets.QLabel(self.centralwidget)
         self.label_repo.setGeometry(QtCore.QRect(30, 50, 291, 61))
         self.label_repo.setFont(font)
-        self.label_repo.setObjectName("label")
+        self.label_repo.setObjectName("label_repo")
         font = QtGui.QFont()
         font.setPointSize(18)
 
@@ -49,6 +61,36 @@ class Ui_MainWindow(object):
         self.repo_btn.setObjectName("ReelGetiriH")
 
         self.repo_btn.clicked.connect(self.openWindowRepoGetiri)
+
+        self.label_piyasadeg = QtWidgets.QLabel(self.centralwidget)
+        self.label_piyasadeg.setGeometry(QtCore.QRect(30, 100, 291, 61))
+        self.label_piyasadeg.setFont(font)
+        self.label_piyasadeg.setObjectName("label_piyasadeg")
+        font = QtGui.QFont()
+        font.setPointSize(18)
+
+        self.piyasadeg_btn = QtWidgets.QPushButton(self.centralwidget)
+        self.piyasadeg_btn.setGeometry(QtCore.QRect(420, 110, 101, 41))
+        self.piyasadeg_btn.setFont(font)
+        self.piyasadeg_btn.setObjectName("piyasadegH")
+
+        self.piyasadeg_btn.clicked.connect(self.openWindowPiyasaDegeri)
+
+
+        self.label_varlıkdeg = QtWidgets.QLabel(self.centralwidget)
+        self.label_varlıkdeg.setGeometry(QtCore.QRect(30, 150, 291, 61))
+        self.label_varlıkdeg.setFont(font)
+        self.label_varlıkdeg.setObjectName("label_varlıkdeg")
+        font = QtGui.QFont()
+        font.setPointSize(18)
+
+        self.varlıkdeg_btn = QtWidgets.QPushButton(self.centralwidget)
+        self.varlıkdeg_btn.setGeometry(QtCore.QRect(420, 160, 101, 41))
+        self.varlıkdeg_btn.setFont(font)
+        self.varlıkdeg_btn.setObjectName("varlıkdegH")
+
+        self.varlıkdeg_btn.clicked.connect(self.openWindowVarlikDegeri)
+
         
         
         MainWindow.setCentralWidget(self.centralwidget)
@@ -70,6 +112,10 @@ class Ui_MainWindow(object):
         self.ReelGetiriH.setText(_translate("MainWindow", "Hesapla"))
         self.label_repo.setText(_translate("MainWindow", "Repo getirisi hesaplama"))
         self.repo_btn.setText(_translate("MainWindow", "Hesapla"))
+        self.label_piyasadeg.setText(_translate("MainWindow", "Piyasa değeri hesaplama"))
+        self.piyasadeg_btn.setText(_translate("MainWindow", "Hesapla"))
+        self.label_varlıkdeg.setText(_translate("MainWindow", "Varlık değeri hesaplama"))
+        self.varlıkdeg_btn.setText(_translate("MainWindow", "Hesapla"))
 
 
 if __name__ == "__main__":
