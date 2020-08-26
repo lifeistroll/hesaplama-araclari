@@ -3,6 +3,8 @@ from reelgetiri import Ui_ReelGetiri
 from repohesaplama import Ui_repogethesaplama
 from piyasadegerihesaplama import Ui_piyasadegerihesaplama
 from varlikdeg import Ui_varlikdeg
+from donervarlikdevirhizi import Ui_donervarlikdevirhizi_2
+from duranvarlikdevirhizi import Ui_duranvarlikdevirhizi
 
 class Ui_MainWindow(object):
 
@@ -24,6 +26,16 @@ class Ui_MainWindow(object):
     def openWindowVarlikDegeri(self):
         self.window =  QtWidgets.QMainWindow()
         self.ui = Ui_varlikdeg()
+        self.ui.setupUi(self.window)
+        self.window.show()
+    def openWindowdonervarlikdevirhizi(self):
+        self.window =  QtWidgets.QMainWindow()
+        self.ui = Ui_donervarlikdevirhizi_2()
+        self.ui.setupUi(self.window)
+        self.window.show()
+    def openWidnowduranvarlikdevirhizi(self):
+        self.window =  QtWidgets.QMainWindow()
+        self.ui = Ui_duranvarlikdevirhizi()
         self.ui.setupUi(self.window)
         self.window.show()
 
@@ -92,6 +104,37 @@ class Ui_MainWindow(object):
         self.varlıkdeg_btn.clicked.connect(self.openWindowVarlikDegeri)
 
         
+        self.label_donenvarlikdevir = QtWidgets.QLabel(self.centralwidget)
+        self.label_donenvarlikdevir.setGeometry(QtCore.QRect(30, 200, 350, 61))
+        self.label_donenvarlikdevir.setFont(font)
+        self.label_donenvarlikdevir.setObjectName("label_donenvarlikdevir")
+        font = QtGui.QFont()
+        font.setPointSize(18)
+
+        self.donenvarlikdevir_btn = QtWidgets.QPushButton(self.centralwidget)
+        self.donenvarlikdevir_btn.setGeometry(QtCore.QRect(420, 210, 101, 41))
+        self.donenvarlikdevir_btn.setFont(font)
+        self.donenvarlikdevir_btn.setObjectName("donenvarlikdevirH")
+
+        self.donenvarlikdevir_btn.clicked.connect(self.openWindowdonervarlikdevirhizi)
+
+
+
+        self.label_duranvarlikdevir = QtWidgets.QLabel(self.centralwidget)
+        self.label_duranvarlikdevir.setGeometry(QtCore.QRect(30, 250, 350, 61))
+        self.label_duranvarlikdevir.setFont(font)
+        self.label_duranvarlikdevir.setObjectName("label_duranvarlikdevir")
+        font = QtGui.QFont()
+        font.setPointSize(18)
+
+        self.duranvarlikdevir_btn = QtWidgets.QPushButton(self.centralwidget)
+        self.duranvarlikdevir_btn.setGeometry(QtCore.QRect(420, 260, 101, 41))
+        self.duranvarlikdevir_btn.setFont(font)
+        self.duranvarlikdevir_btn.setObjectName("duranvarlikdevirH")
+
+        self.duranvarlikdevir_btn.clicked.connect(self.openWidnowduranvarlikdevirhizi)
+
+        
         
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
@@ -116,6 +159,10 @@ class Ui_MainWindow(object):
         self.piyasadeg_btn.setText(_translate("MainWindow", "Hesapla"))
         self.label_varlıkdeg.setText(_translate("MainWindow", "Varlık değeri hesaplama"))
         self.varlıkdeg_btn.setText(_translate("MainWindow", "Hesapla"))
+        self.label_donenvarlikdevir.setText(_translate("MainWindow", "Dönen varlıkların devir hızını hes."))
+        self.donenvarlikdevir_btn.setText(_translate("MainWindow", "Hesapla"))
+        self.label_duranvarlikdevir.setText(_translate("MainWindow", "Duran varlıkların devir hızını hes."))
+        self.duranvarlikdevir_btn.setText(_translate("MainWindow", "Hesapla"))
 
 
 if __name__ == "__main__":
