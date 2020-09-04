@@ -70,7 +70,7 @@ class Ui_varlikdeg(object):
 
     def retranslateUi(self, varlikdeg):
         _translate = QtCore.QCoreApplication.translate
-        varlikdeg.setWindowTitle(_translate("varlikdeg", "MainWindow"))
+        varlikdeg.setWindowTitle(_translate("varlikdeg", "Varlık Değeri Hesaplama"))
         self.label1.setText(_translate("varlikdeg", "Toplam aktifler"))
         self.label_2.setText(_translate("varlikdeg", "Kısa vadeli borçlar toplamı"))
         self.label_3.setText(_translate("varlikdeg", "Uzun vadeli borçlar toplamı"))
